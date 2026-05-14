@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DS Unity Trip 2025 — Register Now</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+
+<!-- ════════════════════════════════════════════════════
+     ██████████████  STYLES  ████████████████████████████
+     ════════════════════════════════════════════════════ -->
+<style>
+/* ── Tokens ─────────────────────────── */
+:root{
+  --bg:       #030c18;
+  --accent:   #00d4ff;
+  --violet:   #7c3aed;
+  --gold:     #f59e0b;
+  --green:    #10b981;
+  --glass:    rgba(255,255,255,.065);
+  --gb:       rgba(255,255,255,.10);
+  --text:     #eef4ff;
+  --muted:    #7da0c4;
+  --dim:      #3d607e;
+  --fh:       'Syne',sans-serif;
+  --fb:       'DM Sans',sans-serif;
+  --r:        16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+
+/* ── Glass card ─────────────────────── */
+.glass{
+  background:var(--glass);
+  border:1px solid var(--gb);
+  backdrop-filter:blur(22px) saturate(1.5);
+  -webkit-backdrop-filter:blur(22px) saturate(1.5);
+  box-shadow:0 8px 48px rgba(0,0,0,.5);
+  border-radius:var(--r);
+}
+
+/* ════════════════════════════════
+   BACKGROUND — NIGHT MOUNTAIN
+   ════════════════════════════════ */
+.bg{
+  position:fixed;inset:0;z-index:0;overflow:hidden;
+  background:linear-gradient(170deg,#020b16 0%,#041020 35%,#071830 65%,#0a2040 100%);
+}
+
+/* Stars */
+.stars{
+  position:absolute;inset:0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 7%  6%, rgba(255,255,255,.85)  0%,transparent 100%),
+    radial-gradient(1px  1px  at 18% 12%, rgba(255,255,255,.55)  0%,transparent 100%),
+    radial-gradient(2px  2px  at 33%  4%, rgba(200,230,255,.90)  0%,transparent 100%),
+    radial-gradient(1px  1px  at 50%  9%, rgba(255,255,255,.60)  0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 65% 3%, rgba(255,255,255,.75) 0%,transparent 100%),
+    radial-gradient(1px  1px  at 80% 14%, rgba(255,255,255,.50)  0%,transparent 100%),
+    radial-gradient(1px  1px  at 93%  8%, rgba(255,255,255,.65)  0%,transparent 100%),
+    radial-gradient(1px  1px  at 12% 22%, rgba(255,255,255,.40)  0%,transparent 100%),
+    radial-gradient(1px  1px  at 28% 28%, rgba(255,255,255,.45)  0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 55% 19%,rgba(180,220,255,.70) 0%,transparent 100%),
+    radial-gradient(1px  1px  at 72% 25%, rgba(255,255,255,.45)  0%,transparent 100%),
+    radial-gradient(1px  1px  at 88% 20%, rgba(255,255,255,.55)  0%,transparent 100%),
+    radial-gradient(1px  1px  at 42% 32%, rgba(255,255,255,.35)  0%,transparent 100%),
+    radial-gradient(2px  2px  at 15% 40%, rgba(200,230,255,.60)  0%,transparent 100%),
+    radial-gradient(1px  1px  at 98% 30%, rgba(255,255,255,.40)  0%,transparent 100%);
+}
+
+/* Aurora */
+.aurora{
+  position:absolute;top:0;left:0;right:0;height:55%;
+  background:
+    radial-gradient(ellipse 90% 55% at 15% 8%,  rgba(0,212,255,.09)  0%,transparent 60%),
+    radial-gradient(ellipse 65% 45% at 75% 5%,  rgba(124,58,237,.11) 0%,transparent 60%),
+    radial-gradient(ellipse 55% 35% at 48% 14%, rgba(0,212,255,.06)  0%,transparent 60%);
+  animation:auroraMove 14s ease-in-out infinite alternate;
+}
+@keyframes auroraMove{
+  from{transform:translateX(-6%) scaleY(1)}
+  to  {transform:translateX(6%)  scaleY(1.2)}
+}
+
+/* Mountains */
+.m-back{
+  position:absolute;bottom:0;width:100%;height:32vh;
+  background:linear-gradient(180deg,#08192e 0%,#04101e 100%);
+  clip-path:polygon(0% 100%,4% 48%,10% 65%,18% 22%,26% 60%,34% 8%,42% 52%,50% 18%,58% 48%,66% 12%,74% 44%,82% 4%,90% 48%,100% 22%,100% 100%);
+}
+.m-mid{
+  position:absolute;bottom:0;width:100%;height:22vh;
+  background:linear-gradient(180deg,#0c1e3c 0%,#071424 100%);
+  clip-path:polygon(0% 100%,0% 72%,8% 48%,16% 78%,24% 38%,32% 68%,40% 28%,50% 62%,58% 32%,66% 58%,74% 22%,82% 52%,90% 28%,100% 48%,100% 100%);
+}
+.m-front{
+  position:absolute;bottom:0;width:100%;height:13vh;
+  background:linear-gradient(180deg,#112540 0%,#091b32 100%);
+  clip-path:polygon(0% 100%,0% 88%,8% 52%,18% 82%,28% 46%,38% 78%,48% 38%,58% 72%,68% 48%,78% 68%,88% 44%,100% 62%,100% 100%);
+}
+/* Snow peaks on back mountain */
+.m-back::after{
+  content:'';position:absolute;bottom:0;width:100%;height:100%;
+  background:linear-gradient(180deg,rgba(200,230,255,.04) 0%,transparent 30%);
+  clip-path:inherit;
+}
+
+nav,section,.footer{position:relative;z-index:2}
+
+/* ════════════════════════════════
+   NAV
+   ════════════════════════════════ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:0 2rem;
+  background:rgba(3,12,24,.65);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.nav-inner{
+  max-width:1080px;margin:0 auto;height:62px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{
+  font-family:var(--fh);font-size:1.2rem;font-weight:800;
+  display:flex;align-items:center;gap:8px;letter-spacing:-.01em;
+}
+.nav-links{display:flex;align-items:center;gap:1.4rem}
+.nav-links a{
+  color:var(--muted);text-decoration:none;font-size:.88rem;font-weight:500;
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--accent)}
+.wa-btn{
+  display:flex!important;align-items:center;gap:6px;
+  background:linear-gradient(135deg,#25d366,#128c7e)!important;
+  color:#fff!important;padding:6px 15px!important;
+  border-radius:20px!important;font-size:.82rem!important;
+  transition:opacity .2s!important;white-space:nowrap;
+}
+.wa-btn:hover{opacity:.85}
+.wa-btn svg{flex-shrink:0}
+
+/* ════════════════════════════════
+   HERO
+   ════════════════════════════════ */
+.hero{
+  min-height:100vh;display:flex;align-items:center;
+  justify-content:center;padding:7rem 2rem 4rem;text-align:center;
+}
+.hero-inner{max-width:700px;animation:fadeUp .9s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+.badge{
+  display:inline-block;
+  background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.28);
+  color:var(--accent);font-size:.74rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  padding:5px 16px;border-radius:20px;margin-bottom:1.4rem;
+  animation:fadeUp .9s ease .1s both;
+}
+.hero h1{
+  font-family:var(--fh);font-size:clamp(2.8rem,9vw,5.5rem);
+  font-weight:800;line-height:1.02;letter-spacing:-.025em;
+  animation:fadeUp .9s ease .18s both;
+}
+.grad{
+  background:linear-gradient(90deg,var(--accent) 0%,var(--violet) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-sub{
+  margin-top:1.1rem;font-size:1.05rem;color:var(--muted);
+  line-height:1.75;animation:fadeUp .9s ease .26s both;
+}
+
+/* Countdown */
+.cd-wrap{margin-top:2.4rem;animation:fadeUp .9s ease .35s both}
+.cd-lbl{
+  font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--dim);margin-bottom:.7rem;
+}
+.countdown{
+  display:inline-flex;align-items:center;gap:.45rem;
+  background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.18);
+  border-radius:14px;padding:.9rem 1.4rem;
+}
+.cu{display:flex;flex-direction:column;align-items:center;min-width:50px}
+.cu span{
+  font-family:var(--fh);font-size:1.9rem;font-weight:800;
+  color:var(--accent);line-height:1;
+}
+.cu label{font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);margin-top:3px}
+.csep{font-size:1.4rem;font-weight:800;color:var(--accent);opacity:.35;padding-bottom:.8rem}
+
+/* Stats */
+.stats{
+  display:flex;justify-content:center;align-items:center;
+  margin-top:1.8rem;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--r);overflow:hidden;
+  animation:fadeUp .9s ease .44s both;
+}
+.si{flex:1;display:flex;flex-direction:column;align-items:center;padding:.9rem}
+.si .n{font-family:var(--fh);font-size:1.4rem;font-weight:800}
+.si .l{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);margin-top:3px}
+.sdiv{width:1px;height:36px;background:rgba(255,255,255,.09)}
+
+/* CTA */
+.hero-cta{
+  margin-top:2rem;
+  display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;
+  animation:fadeUp .9s ease .5s both;
+}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(135deg,var(--accent),var(--violet));
+  color:#fff;font-family:var(--fh);font-weight:700;font-size:.95rem;
+  padding:.85rem 2rem;border-radius:10px;text-decoration:none;
+  box-shadow:0 4px 24px rgba(0,212,255,.25);
+  transition:opacity .2s,transform .15s;border:none;cursor:pointer;
+  letter-spacing:.02em;
+}
+.btn-primary:hover{opacity:.9;transform:translateY(-2px)}
+.btn-secondary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
+  color:var(--text);font-family:var(--fh);font-weight:600;font-size:.9rem;
+  padding:.85rem 1.6rem;border-radius:10px;text-decoration:none;
+  transition:background .2s,transform .15s;cursor:pointer;
+  letter-spacing:.02em;
+}
+.btn-secondary:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+
+/* ════════════════════════════════
+   SECTION WRAPPER
+   ════════════════════════════════ */
+.section{padding:5rem 2rem;max-width:780px;margin:0 auto}
+.section.wide{max-width:1000px}
+.sh{text-align:center;margin-bottom:2.5rem}
+.sh h2{font-family:var(--fh);font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;letter-spacing:-.015em}
+.sh p{color:var(--muted);margin-top:.5rem;font-size:.97rem}
+
+/* ════════════════════════════════
+   REGISTRATION FORM
+   ════════════════════════════════ */
+.form-card{padding:2.5rem 2.2rem;border-radius:24px}
+.form-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:1.2rem;margin-bottom:1.6rem;
+}
+.fw{grid-column:1/-1}
+.fg{display:flex;flex-direction:column;gap:5px}
+.fg label{
+  font-size:.78rem;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.07em;
+}
+.req{color:#f87171}
+.iw{position:relative;display:flex;align-items:center}
+.ii{position:absolute;left:12px;font-size:.95rem;pointer-events:none;z-index:1}
+.iw input,.iw select{
+  width:100%;padding:.72rem 1rem .72rem 2.5rem;
+  background:rgba(255,255,255,.055);
+  border:1.5px solid rgba(255,255,255,.11);
+  border-radius:9px;color:var(--text);
+  font-family:var(--fb);font-size:.93rem;
+  transition:border-color .2s,background .2s,box-shadow .2s;
+  outline:none;appearance:none;
+}
+.iw input::placeholder{color:var(--dim)}
+.iw select option{background:#0a1e38;color:var(--text)}
+.iw input:focus,.iw select:focus{
+  border-color:var(--accent);
+  background:rgba(0,212,255,.06);
+  box-shadow:0 0 0 3px rgba(0,212,255,.13);
+}
+.iw input.inv,.iw select.inv{
+  border-color:#f87171;
+  background:rgba(248,113,113,.06);
+}
+.errtxt{font-size:.73rem;color:#f87171;min-height:15px}
+
+/* Upload zone */
+.uz{
+  position:relative;
+  border:2px dashed rgba(0,212,255,.25);
+  border-radius:9px;background:rgba(0,212,255,.04);
+  padding:1.8rem 1rem;text-align:center;cursor:pointer;
+  transition:border-color .2s,background .2s;overflow:hidden;
+}
+.uz:hover,.uz.drag{border-color:var(--accent);background:rgba(0,212,255,.08)}
+.uz.ok{border-color:var(--green);background:rgba(16,185,129,.07);border-style:solid}
+.fi{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.ui-icon{font-size:2rem;margin-bottom:.45rem}
+.ui-text{color:var(--muted);font-size:.93rem}
+.ui-sub{color:var(--dim);font-size:.78rem;margin-top:3px}
+.ui-sub strong{color:var(--accent)}
+
+/* Submit */
+.sub-btn{
+  width:100%;padding:1rem 2rem;
+  background:linear-gradient(135deg,var(--accent) 0%,var(--violet) 100%);
+  border:none;border-radius:9px;color:#fff;
+  font-family:var(--fh);font-size:1rem;font-weight:700;
+  letter-spacing:.03em;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  transition:opacity .2s,transform .15s,box-shadow .2s;
+  box-shadow:0 4px 28px rgba(0,212,255,.22);
+  position:relative;overflow:hidden;
+}
+.sub-btn::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,transparent 40%,rgba(255,255,255,.12) 100%);
+}
+.sub-btn:hover:not(:disabled){opacity:.91;transform:translateY(-2px);box-shadow:0 8px 36px rgba(0,212,255,.32)}
+.sub-btn:active{transform:translateY(0)}
+.sub-btn:disabled{opacity:.55;cursor:not-allowed}
+.spin{
+  display:inline-block;width:15px;height:15px;
+  border:2px solid rgba(255,255,255,.3);border-top-color:#fff;
+  border-radius:50%;animation:sp .7s linear infinite;vertical-align:middle;
+}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+/* ════════════════════════════════
+   ADMIN PANEL
+   ════════════════════════════════ */
+.admin-card{padding:2rem;border-radius:20px}
+.admin-top{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;margin-bottom:1.75rem;
+  padding-bottom:1.4rem;border-bottom:1px solid rgba(255,255,255,.07);
+}
+.ac-num{font-family:var(--fh);font-size:2.4rem;font-weight:800;color:var(--accent);line-height:1}
+.ac-lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.09em;color:var(--dim);margin-top:3px}
+.ab-row{display:flex;gap:.7rem;flex-wrap:wrap}
+.ab{
+  padding:7px 15px;border-radius:7px;font-family:var(--fb);
+  font-size:.82rem;font-weight:600;cursor:pointer;text-decoration:none;
+  transition:opacity .2s,transform .15s;border:none;
+  display:inline-flex;align-items:center;gap:5px;
+}
+.ab:hover{opacity:.82;transform:translateY(-1px)}
+.ab-r{background:rgba(0,212,255,.13);border:1px solid rgba(0,212,255,.28);color:var(--accent)}
+.ab-d{background:rgba(245,158,11,.13);border:1px solid rgba(245,158,11,.28);color:var(--gold)}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.83rem}
+th{
+  padding:9px 13px;text-align:left;font-family:var(--fh);
+  font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;
+  color:var(--dim);border-bottom:1px solid rgba(255,255,255,.07);
+  white-space:nowrap;
+}
+td{
+  padding:11px 13px;border-bottom:1px solid rgba(255,255,255,.04);
+  color:var(--muted);white-space:nowrap;
+}
+tr:hover td{background:rgba(0,212,255,.04)}
+td:nth-child(2){color:var(--text);font-weight:500}
+.te{text-align:center;padding:2.5rem!important;color:var(--dim);white-space:normal!important}
+
+/* ════════════════════════════════
+   SETUP GUIDE
+   ════════════════════════════════ */
+.setup-card{
+  padding:2rem 2.2rem;border-radius:20px;
+  border-color:rgba(245,158,11,.2)!important;
+  background:rgba(245,158,11,.04)!important;
+}
+.setup-steps{display:flex;flex-direction:column;gap:1.2rem;margin-top:1.5rem}
+.step{display:flex;gap:1.1rem;align-items:flex-start}
+.step-num{
+  flex-shrink:0;width:32px;height:32px;
+  background:linear-gradient(135deg,var(--accent),var(--violet));
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:var(--fh);font-size:.8rem;font-weight:800;color:#fff;
+  margin-top:2px;
+}
+.step-body h4{font-family:var(--fh);font-size:.95rem;font-weight:700;margin-bottom:4px}
+.step-body p,.step-body li{font-size:.85rem;color:var(--muted);line-height:1.6}
+.step-body ul{list-style:none;margin-top:4px}
+.step-body li::before{content:'→ ';color:var(--accent)}
+code{
+  background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.2);
+  color:var(--accent);padding:1px 7px;border-radius:4px;font-size:.82rem;
+  font-family:'Courier New',monospace;
+}
+.script-box{
+  background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.1);
+  border-radius:9px;padding:1rem;margin-top:.6rem;
+  font-family:'Courier New',monospace;font-size:.78rem;
+  color:#86efac;line-height:1.7;overflow-x:auto;white-space:pre;
+}
+.copy-btn{
+  display:inline-flex;align-items:center;gap:6px;margin-top:.6rem;
+  background:rgba(0,212,255,.12);border:1px solid rgba(0,212,255,.25);
+  color:var(--accent);padding:5px 13px;border-radius:6px;
+  font-size:.78rem;font-weight:600;cursor:pointer;transition:opacity .2s;
+  font-family:var(--fb);
+}
+.copy-btn:hover{opacity:.8}
+.url-input-wrap{display:flex;gap:.6rem;margin-top:.7rem;flex-wrap:wrap}
+.url-field{
+  flex:1;min-width:220px;padding:.65rem 1rem;
+  background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.15);
+  border-radius:8px;color:var(--text);font-family:var(--fb);font-size:.88rem;
+  outline:none;transition:border-color .2s;
+}
+.url-field:focus{border-color:var(--accent)}
+.url-field::placeholder{color:var(--dim)}
+.save-url-btn{
+  padding:.65rem 1.2rem;background:linear-gradient(135deg,var(--accent),var(--violet));
+  border:none;border-radius:8px;color:#fff;font-family:var(--fh);
+  font-size:.85rem;font-weight:700;cursor:pointer;white-space:nowrap;
+  transition:opacity .2s;
+}
+.save-url-btn:hover{opacity:.88}
+.url-saved{
+  display:none;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);
+  color:var(--green);padding:.6rem 1rem;border-radius:8px;
+  font-size:.83rem;margin-top:.5rem;
+}
+
+/* ════════════════════════════════
+   ORGANIZERS
+   ════════════════════════════════ */
+.org-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;
+}
+.org{
+  padding:1.8rem 1.4rem;text-align:center;border-radius:18px;
+  transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden;
+}
+.org::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(0,212,255,.04) 0%,rgba(124,58,237,.04) 100%);
+}
+.org:hover{transform:translateY(-6px);box-shadow:0 18px 48px rgba(0,0,0,.4)}
+.org.star{border-color:rgba(245,158,11,.35)!important;background:rgba(245,158,11,.05)!important}
+.org-av{font-size:2.4rem;margin-bottom:.9rem;display:block}
+.org-name{font-family:var(--fh);font-size:.98rem;font-weight:700}
+.org-role{font-size:.78rem;color:var(--dim);margin-top:3px}
+.org-tag{
+  display:inline-block;margin-top:.65rem;
+  background:rgba(245,158,11,.18);border:1px solid rgba(245,158,11,.32);
+  color:var(--gold);font-size:.68rem;font-weight:700;
+  padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.06em;
+}
+
+/* ════════════════════════════════
+   FOOTER
+   ════════════════════════════════ */
+.footer{
+  padding:3rem 2rem;text-align:center;
+  border-top:1px solid rgba(255,255,255,.06);
+  position:relative;z-index:2;
+}
+.flogo{font-family:var(--fh);font-size:1.2rem;font-weight:800;margin-bottom:.5rem}
+.footer p{color:var(--dim);font-size:.83rem;margin-top:.3rem}
+.footer a{color:#25d366;font-weight:600;text-decoration:none;font-size:.88rem}
+.fcopy{font-style:italic;margin-top:.75rem!important;font-size:.78rem!important}
+
+/* ════════════════════════════════
+   POPUPS
+   ════════════════════════════════ */
+.overlay{
+  position:fixed;inset:0;background:rgba(2,7,16,.9);z-index:9999;
+  display:flex;align-items:center;justify-content:center;padding:1.5rem;
+  opacity:0;pointer-events:none;transition:opacity .3s;
+}
+.overlay.on{opacity:1;pointer-events:all}
+.popup{
+  max-width:420px;width:100%;padding:2.5rem 2rem;text-align:center;
+  transform:scale(.9) translateY(18px);
+  transition:transform .38s cubic-bezier(.34,1.56,.64,1);
+  border-radius:24px;
+}
+.overlay.on .popup{transform:scale(1) translateY(0)}
+.pop-icon{font-size:2.8rem;margin-bottom:.9rem;display:block}
+.pop-title{font-family:var(--fh);font-size:1.35rem;font-weight:800;margin-bottom:.6rem}
+.pop-msg{color:var(--muted);line-height:1.65;font-size:.93rem}
+.pop-sub{font-size:.74rem;color:var(--dim);margin-top:.5rem;font-style:italic}
+.pop-close{
+  margin-top:1.4rem;padding:9px 26px;
+  background:linear-gradient(135deg,var(--accent),var(--violet));
+  border:none;border-radius:8px;color:#fff;
+  font-family:var(--fh);font-weight:700;font-size:.88rem;
+  cursor:pointer;transition:opacity .2s;
+}
+.pop-close:hover{opacity:.85}
+.err-pop{border-color:rgba(248,113,113,.28)!important}
+.err-close{background:linear-gradient(135deg,#f87171,#dc2626)!important}
+
+/* ════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════ */
+@media(max-width:640px){
+  .form-grid{grid-template-columns:1fr}
+  .fw{grid-column:1}
+  .nav-links a:not(.wa-btn){display:none}
+  .org-grid{grid-template-columns:1fr}
+  .countdown{gap:.3rem;padding:.75rem 1rem}
+  .cu span{font-size:1.55rem}
+  .cu{min-width:42px}
+  .stats{flex-direction:column}
+  .sdiv{width:75%;height:1px}
+  .admin-top{flex-direction:column;align-items:flex-start}
+  .hero-cta{flex-direction:column;align-items:center}
+}
+@media(max-width:460px){
+  .form-card{padding:1.4rem 1rem}
+  .setup-card{padding:1.5rem 1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- Background -->
+<div class="bg">
+  <div class="stars"></div>
+  <div class="aurora"></div>
+  <div class="m-back"></div>
+  <div class="m-mid"></div>
+  <div class="m-front"></div>
+</div>
+
+<!-- ══════════════ NAV ══════════════ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">⛰️ DS Unity</div>
+    <div class="nav-links">
+      <a href="#register">Register</a>
+      <a href="#admin-panel">Admin</a>
+      <a href="#setup">Setup</a>
+      <a href="https://wa.me/923308551717" target="_blank" class="wa-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="badge">🎓 Department of Data Science · Peshawar</div>
+    <h1>DS Unity<br/><span class="grad">Trip 2025</span></h1>
+    <p class="hero-sub">An unforgettable journey for the Data Science family. Explore, connect, and make memories that last a lifetime.</p>
+
+    <!-- Countdown -->
+    <div class="cd-wrap">
+      <div class="cd-lbl">Trip departs in</div>
+      <div class="countdown">
+        <div class="cu"><span id="cd-d">00</span><label>Days</label></div>
+        <div class="csep">:</div>
+        <div class="cu"><span id="cd-h">00</span><label>Hours</label></div>
+        <div class="csep">:</div>
+        <div class="cu"><span id="cd-m">00</span><label>Mins</label></div>
+        <div class="csep">:</div>
+        <div class="cu"><span id="cd-s">00</span><label>Secs</label></div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="si"><span class="n" id="hero-count" style="color:var(--accent)">—</span><span class="l">Registered</span></div>
+      <div class="sdiv"></div>
+      <div class="si"><span class="n">17 May</span><span class="l">Departure</span></div>
+      <div class="sdiv"></div>
+      <div class="si"><span class="n">2025</span><span class="l">Season</span></div>
+    </div>
+
+    <div class="hero-cta">
+      <a href="#register" class="btn-primary">📝 Register Now</a>
+      <a href="https://wa.me/923308551717" target="_blank" class="btn-secondary">💬 Ask on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ REGISTRATION FORM ══════════════ -->
+<section class="section" id="register">
+  <div class="sh"><h2>Secure Your Spot</h2><p>Fill in your details — limited seats available!</p></div>
+
+  <div class="form-card glass">
+    <form id="reg-form" novalidate>
+      <div class="form-grid">
+
+        <!-- Full Name -->
+        <div class="fg fw">
+          <label>Full Name <span class="req">*</span></label>
+          <div class="iw"><span class="ii">👤</span>
+            <input type="text" id="full_name" placeholder="e.g. Muhammad Ali Khan" autocomplete="name" required/>
+          </div>
+          <span class="errtxt" id="e-full_name"></span>
+        </div>
+
+        <!-- Department -->
+        <div class="fg">
+          <label>Department <span class="req">*</span></label>
+          <div class="iw"><span class="ii">🏛️</span>
+            <select id="department" required>
+              <option value="" disabled selected>Select Department</option>
+              <option>Data Science</option>
+              <option>Computer Science</option>
+              <option>Software Engineering</option>
+              <option>Information Technology</option>
+              <option>Mathematics</option>
+              <option>Statistics</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <span class="errtxt" id="e-department"></span>
+        </div>
+
+        <!-- Semester -->
+        <div class="fg">
+          <label>Semester <span class="req">*</span></label>
+          <div class="iw"><span class="ii">📅</span>
+            <select id="semester" required>
+              <option value="" disabled selected>Select Semester</option>
+              <option>1st Semester</option><option>2nd Semester</option>
+              <option>3rd Semester</option><option>4th Semester</option>
+              <option>5th Semester</option><option>6th Semester</option>
+              <option>7th Semester</option><option>8th Semester</option>
+            </select>
+          </div>
+          <span class="errtxt" id="e-semester"></span>
+        </div>
+
+        <!-- Phone -->
+        <div class="fg">
+          <label>Phone Number <span class="req">*</span></label>
+          <div class="iw"><span class="ii">📱</span>
+            <input type="tel" id="phone" placeholder="03XXXXXXXXX" maxlength="11" required/>
+          </div>
+          <span class="errtxt" id="e-phone"></span>
+        </div>
+
+        <!-- CNIC -->
+        <div class="fg">
+          <label>CNIC Number <span class="req">*</span></label>
+          <div class="iw"><span class="ii">🪪</span>
+            <input type="text" id="cnic" placeholder="XXXXX-XXXXXXX-X" maxlength="15" required/>
+          </div>
+          <span class="errtxt" id="e-cnic"></span>
+        </div>
+
+        <!-- Screenshot -->
+        <div class="fg fw">
+          <label>Payment Screenshot <span class="req">*</span></label>
+          <div class="uz" id="uz">
+            <input type="file" class="fi" id="screenshot" accept="image/*,.pdf"/>
+            <div id="ui">
+              <div class="ui-icon">📸</div>
+              <div class="ui-text">Drop your payment screenshot here</div>
+              <div class="ui-sub">or <strong>click to browse</strong> &nbsp;·&nbsp; PNG / JPG / PDF &nbsp;·&nbsp; Max 5MB</div>
+            </div>
+          </div>
+          <span class="errtxt" id="e-screenshot"></span>
+        </div>
+
+      </div><!-- /grid -->
+
+      <button type="submit" class="sub-btn" id="sub-btn">
+        <span id="btn-text">Submit Registration 🚀</span>
+        <span id="btn-load" style="display:none"><span class="spin"></span> Submitting…</span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ══════════════ SETUP GUIDE ══════════════ -->
+<section class="section" id="setup">
+  <div class="sh">
+    <h2>⚙️ Google Sheets Setup</h2>
+    <p>Connect your form to Google Sheets in 3 easy steps — completely free</p>
+  </div>
+
+  <div class="setup-card glass">
+
+    <!-- Step 1 -->
+    <div class="setup-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h4>Create your Google Sheet</h4>
+          <p>Go to <a href="https://sheets.google.com" target="_blank" style="color:var(--accent)">sheets.google.com</a> → Create new sheet → Name it exactly: <code>DS Unity Registrations</code></p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h4>Create a Google Apps Script Web App</h4>
+          <ul>
+            <li>Open your Google Sheet → click <strong>Extensions → Apps Script</strong></li>
+            <li>Delete everything and paste this script:</li>
+          </ul>
+          <div class="script-box" id="gas-script">const SHEET_NAME = "DS Unity Registrations";
+const DRIVE_FOLDER = "DS Unity Screenshots"; // optional
+
+function doPost(e) {
+  try {
+    const data   = JSON.parse(e.postData.contents);
+    const ss     = SpreadsheetApp.getActiveSpreadsheet();
+    const sheet  = ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
+
+    // Add headers if sheet is empty
+    if (sheet.getLastRow() === 0) {
+      sheet.appendRow([
+        "Timestamp","Full Name","Department","Semester",
+        "Phone Number","CNIC","Screenshot URL"
+      ]);
+    }
+
+    let screenshotUrl = "No screenshot";
+
+    // Save screenshot to Drive if provided
+    if (data.screenshot && data.screenshotName) {
+      try {
+        const folders = DriveApp.getFoldersByName(DRIVE_FOLDER);
+        const folder  = folders.hasNext()
+          ? folders.next()
+          : DriveApp.createFolder(DRIVE_FOLDER);
+
+        const decoded = Utilities.base64Decode(data.screenshot);
+        const blob    = Utilities.newBlob(decoded, data.screenshotType, data.screenshotName);
+        const file    = folder.createFile(blob);
+        file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+        screenshotUrl = file.getUrl();
+      } catch(err) {
+        screenshotUrl = "Upload failed: " + err.message;
+      }
+    }
+
+    // Append registration row
+    sheet.appendRow([
+      new Date().toLocaleString(),
+      data.fullName, data.department, data.semester,
+      data.phone, data.cnic, screenshotUrl
+    ]);
+
+    return ContentService
+      .createTextOutput(JSON.stringify({ success: true, count: sheet.getLastRow() - 1 }))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch(err) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ success: false, error: err.message }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+function doGet(e) {
+  const ss    = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = ss.getSheetByName(SHEET_NAME);
+  if (!sheet) return ContentService.createTextOutput(JSON.stringify({ count:0, rows:[] })).setMimeType(ContentService.MimeType.JSON);
+
+  const rows = sheet.getDataRange().getValues();
+  if (rows.length <= 1) return ContentService.createTextOutput(JSON.stringify({ count:0, rows:[] })).setMimeType(ContentService.MimeType.JSON);
+
+  const headers = rows[0];
+  const data    = rows.slice(1).map(r => {
+    const obj = {};
+    headers.forEach((h,i) => obj[h] = r[i]);
+    return obj;
+  });
+
+  return ContentService
+    .createTextOutput(JSON.stringify({ count: data.length, rows: data }))
+    .setMimeType(ContentService.MimeType.JSON);
+}</div>
+          <button class="copy-btn" onclick="copyScript()">📋 Copy Script</button>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h4>Deploy as Web App & paste URL below</h4>
+          <ul>
+            <li>Click <strong>Deploy → New Deployment</strong></li>
+            <li>Type: <strong>Web App</strong> &nbsp;·&nbsp; Execute as: <strong>Me</strong> &nbsp;·&nbsp; Who has access: <strong>Anyone</strong></li>
+            <li>Click <strong>Deploy</strong> → copy the Web App URL</li>
+            <li>Paste it here and click Save:</li>
+          </ul>
+          <div class="url-input-wrap">
+            <input type="url" class="url-field" id="gas-url"
+                   placeholder="https://script.google.com/macros/s/…/exec"
+                   value=""/>
+            <button class="save-url-btn" onclick="saveUrl()">💾 Save URL</button>
+          </div>
+          <div class="url-saved" id="url-saved">✅ URL saved! Form is now connected to Google Sheets.</div>
+        </div>
+      </div>
+
+    </div><!-- /steps -->
+  </div>
+</section>
+
+<!-- ══════════════ ADMIN PANEL ══════════════ -->
+<section class="section wide" id="admin-panel">
+  <div class="sh"><h2>Admin Dashboard</h2><p>Live view of all registrations</p></div>
+  <div class="admin-card glass">
+    <div class="admin-top">
+      <div>
+        <div class="ac-num" id="admin-count">—</div>
+        <div class="ac-lbl">Total Registrations</div>
+      </div>
+      <div class="ab-row">
+        <button class="ab ab-r" onclick="loadRegs()">🔄 Refresh</button>
+        <button class="ab ab-d" onclick="exportCSV()">⬇️ Download CSV</button>
+      </div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th><th>Full Name</th><th>Department</th>
+            <th>Semester</th><th>Phone</th><th>CNIC</th><th>Timestamp</th>
+          </tr>
+        </thead>
+        <tbody id="reg-tbody">
+          <tr><td colspan="7" class="te">Set up your Google Sheet URL above, then click Refresh</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ ORGANIZERS ══════════════ -->
+<section class="section" id="organizers">
+  <div class="sh"><h2>Meet the Organizers</h2><p>The legends behind DS Unity Trip 2025 ✨</p></div>
+  <div class="org-grid">
+    <div class="org glass">
+      <span class="org-av">🎯</span>
+      <div class="org-name">Muhammad Ihtsham</div>
+      <div class="org-role">Lead Organizer</div>
+    </div>
+    <div class="org glass">
+      <span class="org-av">⚡</span>
+      <div class="org-name">Hamid Noor</div>
+      <div class="org-role">Event Coordinator</div>
+    </div>
+    <div class="org glass star">
+      <span class="org-av">😂</span>
+      <div class="org-name">Jawad Khan</div>
+      <div class="org-role">The Real MVP 😂</div>
+      <div class="org-tag">Built This Site Too</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="footer">
+  <div class="flogo">⛰️ DS Unity Trip 2025</div>
+  <p>Department of Data Science · University of Peshawar Region</p>
+  <p style="margin-top:.6rem"><a href="https://wa.me/923308551717" target="_blank">📱 WhatsApp: 0330-8551717</a></p>
+  <p class="fcopy">Made with ❤️ by Jawad Khan — who apparently does everything 😂</p>
+</footer>
+
+<!-- ══════════════ POPUPS ══════════════ -->
+<div class="overlay" id="ok-overlay">
+  <div class="popup glass">
+    <span class="pop-icon">🎉</span>
+    <div class="pop-title">Registration Submitted!</div>
+    <p class="pop-msg">Welcome to DS Unity Trip 2025! We'll reach out on WhatsApp with further details. Get ready for an amazing trip! 🏔️</p>
+    <div class="pop-sub" id="ok-sub"></div>
+    <button class="pop-close" onclick="closeOk()">Awesome, Let's Go!</button>
+  </div>
+</div>
+
+<div class="overlay" id="err-overlay">
+  <div class="popup glass err-pop">
+    <span class="pop-icon">⚠️</span>
+    <div class="pop-title">Oops!</div>
+    <p class="pop-msg" id="err-msg">Something went wrong. Please try again.</p>
+    <button class="pop-close err-close" onclick="closeErr()">Try Again</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════
+     ██████████████  JAVASCRIPT  ██████████████████████
+     ════════════════════════════════════════════════════ -->
+<script>
+/* ─── Config ─────────────────────────────────────────── */
+// Paste your Google Apps Script URL here permanently,
+// OR leave blank — user can enter it in the Setup section
+let GAS_URL = localStorage.getItem('gas_url') || '';
+
+/* ─── Countdown ─────────────────────────────────────── */
+(function(){
+  const target = new Date('2025-05-17T06:00:00');
+  function tick(){
+    const d = target - new Date();
+    if(d<=0){
+      document.querySelector('.countdown').innerHTML =
+        '<span style="color:var(--gold);font-family:var(--fh);font-size:1.1rem">🎉 Trip Day is HERE!</span>';
+      return;
+    }
+    set('cd-d', pad(Math.floor(d/86400000)));
+    set('cd-h', pad(Math.floor((d%86400000)/3600000)));
+    set('cd-m', pad(Math.floor((d%3600000)/60000)));
+    set('cd-s', pad(Math.floor((d%60000)/1000)));
+  }
+  function pad(n){ return String(n).padStart(2,'0') }
+  function set(id,v){ const el=document.getElementById(id); if(el&&el.textContent!==v) el.textContent=v; }
+  tick(); setInterval(tick,1000);
+})();
+
+/* ─── Setup URL ─────────────────────────────────────── */
+window.addEventListener('DOMContentLoaded', ()=>{
+  const f = document.getElementById('gas-url');
+  if(f && GAS_URL) f.value = GAS_URL;
+  if(GAS_URL) fetchCount();
+});
+
+function saveUrl(){
+  const v = document.getElementById('gas-url').value.trim();
+  if(!v || !v.startsWith('https://')){
+    alert('Please enter a valid https:// URL');
+    return;
+  }
+  GAS_URL = v;
+  localStorage.setItem('gas_url', v);
+  document.getElementById('url-saved').style.display='block';
+  fetchCount();
+}
+
+function copyScript(){
+  const txt = document.getElementById('gas-script').textContent;
+  navigator.clipboard.writeText(txt).then(()=>{
+    const b = document.querySelector('.copy-btn');
+    b.textContent='✅ Copied!';
+    setTimeout(()=>b.innerHTML='📋 Copy Script',2000);
+  });
+}
+
+/* ─── Fetch registration count ──────────────────────── */
+async function fetchCount(){
+  if(!GAS_URL) return;
+  try{
+    const r = await fetch(GAS_URL);
+    const d = await r.json();
+    const c = d.count ?? 0;
+    ['hero-count','admin-count'].forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.textContent = c;
+    });
+  }catch(e){}
+}
+fetchCount();
+
+/* ─── Upload zone ───────────────────────────────────── */
+const uz = document.getElementById('uz');
+const fi = document.getElementById('screenshot');
+const ui = document.getElementById('ui');
+
+uz.addEventListener('dragover', e=>{ e.preventDefault(); uz.classList.add('drag') });
+uz.addEventListener('dragleave', ()=> uz.classList.remove('drag'));
+uz.addEventListener('drop', e=>{
+  e.preventDefault(); uz.classList.remove('drag');
+  if(e.dataTransfer.files.length){ fi.files=e.dataTransfer.files; previewFile(fi.files[0]); }
+});
+fi.addEventListener('change', ()=>{ if(fi.files.length) previewFile(fi.files[0]); });
+
+function previewFile(f){
+  if(f.size > 5*1024*1024){ setErr('screenshot','File too large. Max 5MB.'); uz.classList.remove('ok'); return; }
+  clrErr('screenshot');
+  uz.classList.add('ok');
+  ui.innerHTML = `<div class="ui-icon">✅</div>
+    <div class="ui-text" style="color:var(--green);font-weight:600">${f.name}</div>
+    <div class="ui-sub">${(f.size/1024).toFixed(1)} KB · click to change</div>`;
+}
+
+/* ─── Validation ────────────────────────────────────── */
+const RULES = {
+  full_name:  { ok: v=>v.trim().length>=3,      msg:'Enter your full name (min 3 chars).' },
+  department: { ok: v=>v.trim()!=='',           msg:'Please select your department.' },
+  semester:   { ok: v=>v.trim()!=='',           msg:'Please select your semester.' },
+  phone:      { ok: v=>/^\d{11}$/.test(v.trim()),msg:'Phone must be exactly 11 digits.' },
+  cnic:       { ok: v=>/^\d{13}$/.test(v.replace(/-/g,'').trim()), msg:'CNIC must be 13 digits.' },
+};
+
+function setErr(f,m){
+  const e=document.getElementById('e-'+f); if(e) e.textContent=m;
+  const el=document.getElementById(f); if(el) el.classList.add('inv');
+}
+function clrErr(f){
+  const e=document.getElementById('e-'+f); if(e) e.textContent='';
+  const el=document.getElementById(f); if(el) el.classList.remove('inv');
+}
+
+// Inline blur validation
+Object.keys(RULES).forEach(f=>{
+  const el=document.getElementById(f); if(!el) return;
+  el.addEventListener('blur',()=>{ if(!RULES[f].ok(el.value)) setErr(f,RULES[f].msg); else clrErr(f); });
+  el.addEventListener('input',()=>clrErr(f));
+});
+
+// CNIC auto-dash
+const cnicEl = document.getElementById('cnic');
+cnicEl.addEventListener('input',()=>{
+  let v = cnicEl.value.replace(/\D/g,'');
+  if(v.length>5)  v = v.slice(0,5)+'-'+v.slice(5);
+  if(v.length>13) v = v.slice(0,13)+'-'+v.slice(13,14);
+  cnicEl.value = v;
+});
+
+function validateAll(){
+  let ok = true;
+  for(const [f,r] of Object.entries(RULES)){
+    const el=document.getElementById(f);
+    if(!r.ok(el?el.value:'')){setErr(f,r.msg);ok=false;}else clrErr(f);
+  }
+  if(!fi.files.length){ setErr('screenshot','Please upload your payment screenshot.'); ok=false; }
+  else clrErr('screenshot');
+  return ok;
+}
+
+/* ─── Convert file to base64 ────────────────────────── */
+function toBase64(file){
+  return new Promise((res,rej)=>{
+    const r=new FileReader();
+    r.onload=()=>res(r.result.split(',')[1]);
+    r.onerror=rej;
+    r.readAsDataURL(file);
+  });
+}
+
+/* ─── Submit ────────────────────────────────────────── */
+document.getElementById('reg-form').addEventListener('submit', async e=>{
+  e.preventDefault();
+  if(!validateAll()){ document.querySelector('.inv')?.scrollIntoView({behavior:'smooth',block:'center'}); return; }
+
+  if(!GAS_URL){
+    showErr('Google Apps Script URL not set! Please complete the Setup section above first.');
+    return;
+  }
+
+  setBtnLoad(true);
+
+  try{
+    const file       = fi.files[0];
+    const b64        = await toBase64(file);
+    const payload    = {
+      fullName:       document.getElementById('full_name').value.trim(),
+      department:     document.getElementById('department').value,
+      semester:       document.getElementById('semester').value,
+      phone:          document.getElementById('phone').value.trim(),
+      cnic:           document.getElementById('cnic').value.trim(),
+      screenshot:     b64,
+      screenshotName: file.name,
+      screenshotType: file.type || 'image/jpeg',
+    };
+
+    const res  = await fetch(GAS_URL, {
+      method:'POST',
+      body:JSON.stringify(payload),
+    });
+    const data = await res.json();
+
+    setBtnLoad(false);
+
+    if(data.success){
+      document.getElementById('reg-form').reset();
+      uz.classList.remove('ok','drag');
+      ui.innerHTML=`<div class="ui-icon">📸</div>
+        <div class="ui-text">Drop your payment screenshot here</div>
+        <div class="ui-sub">or <strong>click to browse</strong> &nbsp;·&nbsp; PNG / JPG / PDF &nbsp;·&nbsp; Max 5MB</div>`;
+      showOk(`Total registrations so far: ${data.count ?? '—'}`);
+      fetchCount();
+    } else {
+      showErr(data.error || 'Submission failed. Please try again.');
+    }
+  }catch(err){
+    setBtnLoad(false);
+    showErr('Network error — check your internet connection and try again.\n\n'+err.message);
+  }
+});
+
+function setBtnLoad(on){
+  const btn = document.getElementById('sub-btn');
+  btn.disabled = on;
+  document.getElementById('btn-text').style.display = on?'none':'inline';
+  document.getElementById('btn-load').style.display = on?'inline-flex':'none';
+}
+
+/* ─── Popups ────────────────────────────────────────── */
+function showOk(sub){ document.getElementById('ok-sub').textContent=sub||''; document.getElementById('ok-overlay').classList.add('on'); }
+function closeOk(){ document.getElementById('ok-overlay').classList.remove('on'); }
+function showErr(m){ document.getElementById('err-msg').textContent=m; document.getElementById('err-overlay').classList.add('on'); }
+function closeErr(){ document.getElementById('err-overlay').classList.remove('on'); }
+['ok-overlay','err-overlay'].forEach(id=>{
+  document.getElementById(id).addEventListener('click',function(e){ if(e.target===this) this.classList.remove('on'); });
+});
+
+/* ─── Admin: load registrations ─────────────────────── */
+let cachedRegs = [];
+
+async function loadRegs(){
+  const tb = document.getElementById('reg-tbody');
+  const ac = document.getElementById('admin-count');
+  tb.innerHTML='<tr><td colspan="7" class="te">⏳ Loading…</td></tr>';
+  if(!GAS_URL){ tb.innerHTML='<tr><td colspan="7" class="te">⚠️ Google Sheets URL not set. Use Setup section above.</td></tr>'; return; }
+  try{
+    const r = await fetch(GAS_URL);
+    const d = await r.json();
+    if(ac) ac.textContent = d.count ?? 0;
+    const hc = document.getElementById('hero-count');
+    if(hc) hc.textContent = d.count ?? 0;
+    cachedRegs = d.rows || [];
+    if(!cachedRegs.length){ tb.innerHTML='<tr><td colspan="7" class="te">No registrations yet.</td></tr>'; return; }
+    tb.innerHTML = cachedRegs.map((row,i)=>`
+      <tr>
+        <td>${i+1}</td>
+        <td>${esc(row['Full Name']||'—')}</td>
+        <td>${esc(row['Department']||'—')}</td>
+        <td>${esc(row['Semester']||'—')}</td>
+        <td>${esc(row['Phone Number']||'—')}</td>
+        <td>${esc(row['CNIC']||'—')}</td>
+        <td>${esc(row['Timestamp']||'—')}</td>
+      </tr>`).join('');
+  }catch(err){
+    tb.innerHTML=`<tr><td colspan="7" class="te">⚠️ Failed to load: ${esc(err.message)}</td></tr>`;
+  }
+}
+
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+/* ─── Export CSV ────────────────────────────────────── */
+function exportCSV(){
+  if(!cachedRegs.length){ alert('Load registrations first (click Refresh).'); return; }
+  const hdrs = ['Full Name','Department','Semester','Phone Number','CNIC','Timestamp'];
+  const rows = [hdrs, ...cachedRegs.map(r=>hdrs.map(h=>'"'+(r[h]||'').toString().replace(/"/g,'""')+'"'))];
+  const csv  = rows.map(r=>r.join(',')).join('\n');
+  const a    = document.createElement('a');
+  a.href     = 'data:text/csv;charset=utf-8,\uFEFF'+encodeURIComponent(csv);
+  a.download = 'ds_unity_registrations.csv';
+  a.click();
+}
+</script>
+</body>
+</html>
